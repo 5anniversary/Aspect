@@ -13,7 +13,11 @@ let package = Package(
     targets: [
         .target(
             name: "Aspect",
-            path: "Aspect")
+            path: "Aspect",
+            exclude: ["Objc"], // Objective-C 파일을 제외합니다.
+            sources: ["."], // Swift 파일만 포함합니다.
+            publicHeadersPath: "Objc" // Objective-C 헤더의 경로를 명시합니다.
+        )
     ],
     swiftLanguageVersions: [.v5]
 )
